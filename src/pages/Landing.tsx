@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import { brand } from '../brand'
 import ChatCoach from '../components/ChatCoach'
+import ScrollPhone from '../components/ScrollPhone'
+import PixelAvatar from '../components/PixelAvatar'
 
 export default function Landing() {
   return (
@@ -9,6 +11,7 @@ export default function Landing() {
       <Hero />
       <Marquee />
       <Features />
+      <ScrollPhone />
       <Stats />
       <Testimonials />
       <CTA />
@@ -240,12 +243,12 @@ function Testimonials() {
         People who hate the gym <span className="text-gradient">kind of love this.</span>
       </h2>
       <div className="mt-12 grid md:grid-cols-3 gap-5">
-        {reviews.map((r) => (
+        {reviews.map((r, i) => (
           <figure key={r.name} className="glass rounded-4xl p-7 flex flex-col">
             <div className="text-lime mb-3">★★★★★</div>
             <blockquote className="text-white/80 leading-relaxed flex-1">"{r.quote}"</blockquote>
             <figcaption className="mt-5 flex items-center gap-3">
-              <span className="h-9 w-9 rounded-full bg-gradient-to-br from-lime to-grape" />
+              <PixelAvatar seed={i} size={40} />
               <span>
                 <span className="block font-semibold text-sm">{r.name}</span>
                 <span className="block text-xs text-white/40">{r.tag}</span>
