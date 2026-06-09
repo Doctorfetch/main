@@ -16,7 +16,7 @@ export default function ScrollPhone() {
       const total = rect.height - window.innerHeight
       const scrolled = Math.min(Math.max(-rect.top, 0), Math.max(total, 1))
       const p = total > 0 ? scrolled / total : 0
-      setRot(p * 360)
+      setRot(p * 180)
     }
     const onScroll = () => {
       cancelAnimationFrame(raf)
